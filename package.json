@@ -12,7 +12,7 @@
     "dist": "grommet pack",
     "dist-server": "babel -d ./dist-server ./server -s",
     "start": "npm run dist-server && grommet pack && node ./dist-server/server.js",
-    "prod-start": "forever start server/dev.js"
+    "prod-start": "forever start -o /opt/mount1/passport-out.log -e /opt/mount1/passport-err.log server/dev.js"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
