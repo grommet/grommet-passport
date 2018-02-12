@@ -17,25 +17,19 @@ To run this application, execute the following commands:
     $ npm run dev-server
     ```
 
-  3. Start the front-end dev server:
-
-    ```
-    $ npm run dev
-    ```
-
-  4. Create the app distribution to be used by a back-end server
+  3. Create the app distribution to be used by a back-end server
 
     ```
     $ grommet pack
     ```
 
-  5. Start the server in production mode:
+  4. Start the server in production mode:
 
     ```
     $ npm start
     ```
 
-  6. Test and run linters:
+  5. Test and run linters:
 
     ```
     $ npm test
