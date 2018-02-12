@@ -48,10 +48,4 @@ if (process.env.API_PREFIX) {
 
 const server = http.createServer(app);
 
-if (process.env.NODE_ENV === 'production') {
-  server.listen(PORT, 'localhost');
-  console.log(`Server started, listening to localhost requests at port ${PORT}`);
-} else {
-  server.listen(PORT);
-  console.log(`Server started, listening at port ${PORT}`);
-}
+server.listen(PORT);
