@@ -6,10 +6,6 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import api from './api';
-import universalRender from './universalRender';
-
-// Middleware
-import { isAuthed } from './middleware/session';
 
 // Environment Variables
 import env from 'node-env-file';
@@ -48,30 +44,6 @@ if (process.env.API_PREFIX) {
   app.use(`/${process.env.API_PREFIX}/api`, api);
 } else {
   app.use(`/api`, api);
-}
-
-// Session check
-app.use('/', isAuthed, (req, res, next) => {
-  next();
-});
-
-// Universal rendering
-if (process.env.NODE_ENV === 'production') {
-  // Serve our static files except the index.html.
-  // The universal renderer uses the index jade file in views.
-  app.use('/', express.static(
-    path.join(__dirname, '/../dist'),
-    { index: '' }
-  ));
-
-  // Only load the universal renderer in production otherwise
-  // React's hot module reloading will throw errors.
-  app.use(universalRender);
-} else {
-  app.use('/', express.static(path.join(__dirname, '/../dist')));
-  app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(path.join(__dirname, '/../dist/index.html')));
-  });
 }
 
 const server = http.createServer(app);
