@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+   node:
+     image: node:6.9.4
+     working_dir: /var/www/client
+     volumes:
+      - ./:/var/www/client
+      - ./docker-init.sh:/usr/local/bin/init.sh
+     ports:
+      - "8102:8102"
+     restart: always
+     command:
+      - init.sh
