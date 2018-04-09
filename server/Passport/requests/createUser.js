@@ -16,8 +16,8 @@ export const createUser = (user, { appId }) =>
                  <userId>${user.userId}</userId>\
                  <emailAddress>${user.emailAddress}</emailAddress>\
               </identity>\
-              <firstName>Alex</firstName>\
-              <lastName>Mejias</lastName>\
+              <firstName>${user.firstName}</firstName>\
+              <lastName>${user.lastName}</lastName>\
               <preferredLanguage>${user.preferredLanguage.value}</preferredLanguage>\
               <residentCountryCode>${user.residentCountryCode.value}</residentCountryCode>\
               <contactByEmail>${user.contactByEmail}</contactByEmail>\
