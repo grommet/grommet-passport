@@ -61,7 +61,7 @@
     "node-sass": "^4.1.1",
     "nodemon": "^1.11.0",
     "pre-commit": "^1.2.2",
-    "react-dev-utils": "^0.4.2",
+    "react-dev-utils": "^11.0.4",
     "react-test-renderer": "^15.4.1",
     "sass-lint": "^1.10.2",
     "sass-loader": "^4.1.1",
